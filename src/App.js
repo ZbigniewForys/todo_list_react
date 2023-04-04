@@ -12,24 +12,24 @@ const tasks = [
 ];
 const hideTasks = false;
 
-
-
-function App() 
-return  (
-    <Container>
-      <h1 className="header">Lista zadań</h1>
-      <Section title="Dodaj nowe zadanie" 
-      buttons={""}  
+function App() {
+  return (
+  <Container>
+    <h1 className="header">Lista zadań</h1>
+    <Section title="Dodaj nowe zadanie"
+      buttons={""}
       body={<Form />}
-      />
- 
-
- <Section title="Lista zadań" 
- buttons={<Buttons tasks={tasks} hideTasks={hideTasks} />}
-    body={<TasksList tasks={tasks} hideTasks={hideTasks}/>}
     />
-     </Container>
 
-  );
 
-  export default App;
+    <Section title="Lista zadań"
+      buttons={<Buttons tasks={tasks} hideTasks={hideTasks} />}
+      body={<TasksList tasks={tasks} hideTasks={hideTasks} />}
+    />
+  </Container>
+
+);
+}
+  
+
+export default App;

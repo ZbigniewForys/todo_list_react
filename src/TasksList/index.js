@@ -22,12 +22,11 @@ return (
                 <ul>
                     <button className="tasksList__button tasksList__button--remove js-buttonRemove">🗑</button>
                 </ul>
-
             </li>
 
         ))}
     </ul>
 );
-        }        
+        }   ;     
 export default TasksList;
 
