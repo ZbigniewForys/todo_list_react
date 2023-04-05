@@ -9,11 +9,16 @@
     background-color: white;
 }
 
+.taskList__ul {
+    padding-left: 0;
+}
+
 .tasksList__line {
     padding: 5px;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
+    justify-content: flex-start;
     gap: 10px;
     border-bottom: 1px;
     border-color: lightgray;

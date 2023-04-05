@@ -1,6 +1,5 @@
 import "./style.css";
 
-
 const Section=({title,body,buttons})=>(
      <section className="section"> 
 <div className="section__header--withButtons">
@@ -8,10 +7,8 @@ const Section=({title,body,buttons})=>(
 {buttons}
 </div>
 {body}
-
 </section>
 
 );
-
 
 export default Section;
