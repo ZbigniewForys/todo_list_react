@@ -40,7 +40,7 @@
 }
 
 .form__buttonAddTask:hover {
-    background-color: rgb(0, 139, 80);
+    background-color: rgb(0, 177, 103);
     transform: scale(1.05);
 }
 
