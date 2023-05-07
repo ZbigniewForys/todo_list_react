@@ -1,9 +1,10 @@
 import { useState } from 'react';
+import Container from "./Container";
 import Form from "./Form";
 import TasksList from "./TasksList";
 import Buttons from "./Buttons";
 import Section from "./Section";
-import Container from "./Container";
+
 import "./index.css";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
   const removeTask = (id) => {
     setTasks(tasks => tasks.filter(task => task.id !== id));
   };
+
   const toggleTaskDone = (id) => {
     setTasks(tasks => tasks.map(task => {
       if (task.id === id) {
@@ -65,6 +67,5 @@ function App() {
 
   );
 }
-
 
 export default App;
