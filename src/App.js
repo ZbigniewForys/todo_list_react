@@ -9,10 +9,7 @@ import "./index.css";
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
-  const [tasks, setTasks] = useState([
-    { id: 1, content: "Zadanie 1", done: true },
-    { id: 2, content: "Zadanie 2", done: false },
-  ])
+  const [tasks, setTasks] = useState([])
 
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone);
