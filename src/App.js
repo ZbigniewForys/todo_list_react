@@ -4,12 +4,19 @@ import Form from "./Form";
 import TasksList from "./TasksList";
 import Buttons from "./Buttons";
 import Section from "./Section";
-
 import "./index.css";
 
+  const readLocalStorage =()=>{
+    const savedTasks=localStorage.getItem("savedTasks");
+    if(savedTasks!==null)
+    return JSON.parse(savedTasks) ;
+    return [] ;
+  };
 function App() {
+
   const [hideDone, setHideDone] = useState(false);
-  const [tasks, setTasks] = useState([]) ;
+   const [tasks, setTasks] = useState(readLocalStorage) ;
+   localStorage.setItem("savedTasks",JSON.stringify(tasks));
 
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone);
@@ -27,10 +34,12 @@ function App() {
       return task;
     }));
   }
+  
   const setAllDone = () => {
     setTasks(tasks => tasks.map(task => ({ ...task, done: true, }))
     );
   }
+
   const addNewTask = (newTaskContent) => {
     setTasks(tasks => [...tasks,{content: newTaskContent.trim(),
        id:  tasks.length===0 ? 1 : tasks[tasks.length-1].id+1,  done:false, },]);
@@ -38,8 +47,8 @@ function App() {
 
   return (
     <Container>
-      <h1 className="header">Lista zadań</h1>
-      <Section title="Dodaj nowe zadanie"
+         <h1 className="header">Lista zadań</h1>
+    <Section title="Dodaj nowe zadanie"
         body={<Form 
           addNewTask={addNewTask}
           />}
