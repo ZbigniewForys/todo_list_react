@@ -13,7 +13,6 @@ import "./index.css";
     return [] ;
   };
 function App() {
-
   const [hideDone, setHideDone] = useState(false);
    const [tasks, setTasks] = useState(readLocalStorage) ;
    localStorage.setItem("savedTasks",JSON.stringify(tasks));
@@ -60,7 +59,6 @@ function App() {
             toggleHideDone={toggleHideDone}
             setAllDone={setAllDone}
           />}
-
         body={
           <TasksList
             tasks={tasks}
@@ -70,7 +68,6 @@ function App() {
           />}
       />
     </Container>
-
   );
 }
 
