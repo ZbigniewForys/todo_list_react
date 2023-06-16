@@ -1,19 +1,19 @@
-.tasksList {
+import styled, { css } from "styled-components";
+
+export const StyledTasksList = styled.object`
     padding: 0 3px 20px;
     margin: 0;
-}
-
-.tasksList__header {
+`;
+export const StyledTasksListHeader = styled.header`
     margin: 0 12px 20px;
     padding-left: 5px;
     background-color: white;
-}
-
-.taskList__ul {
+`;
+export const StyledTaskListUl = styled.ul`
     padding-left: 0 ;
-}
+`;
 
-.tasksList__line {
+export const StyledTasksListLine = styled.tr`
     padding: 5px;
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -23,13 +23,12 @@
     border-bottom: 1px;
     border-color: lightgray;
     border-bottom-style: solid;
-}
-
-.tasksList__line--hidden {
+ 
+${({ hidden }) => hidden && css`
     display: none;
-}
-
-.tasksList__button {
+`}
+`;
+export const StyledTasksListButton = styled.button`
     margin: 10px;
     height: 30px;
     width: 30px;
@@ -38,36 +37,30 @@
     color: white;
     font-weight: 700;
     transition: transform 0.2s, color 0.7s;
-}
-
-.tasksList__button:hover {
+&:hover {
     background-color: rgba(0, 128, 0, 0.6);
 }
-
-.tasksList__button--remove {
+${({ remove }) => remove && css`
     background-color: red;
     transition: transform 0.2s, color 0.7s;
-}
 
-.tasksList__button--remove:hover {
+&:hover {
     background-color: rgba(251, 1, 1, 0.6);
 }
+`};
+`;
 
-.tasksList__paragraph {
+export const StyledTasksListParagraph = styled.p` 
     margin: 5px;
-    padding: 5px;
-    width: 100%;
-    display: inline-block;
-}
-
-.tasksList__paragraph--done {
-    color: rgb(128, 128, 128);
-    text-decoration: line-through;
-}
-
-@media (max-width:767px) {
-    .tasksList__paragraph {
+    padding: 5px ;
+    width: 100% ;
+    display: inline - block;
+    ${({ taskDone }) => taskDone && css`  
+        color:gray ;
+        text-decoration:line-through;
+  
+        @media (max-width:767px) {
         padding: 0;
         width: 80%;
-    }
-}
+    }`
+    }`

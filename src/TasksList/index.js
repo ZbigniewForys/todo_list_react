@@ -1,30 +1,38 @@
 
-import "./style.css"
-const TasksList = ({ tasks, hideDone, removeTask, toggleTaskDone }) => {
-    return (
-        <ul className="tasksList">
-            {tasks.map(task => (
-                <li key={task.id}
-                    className={(hideDone && task.done ?
-                        "tasksList__line tasksList__line--hidden"
-                        : "tasksList__line")} >
-                    <button onClick={() => toggleTaskDone(task.id)}
-                        className="tasksList__button">
-                        {task.done ? "✓" : ""}
-                    </button>
-                    <span className=
-                        {task.done ?
-                            "tasksList__paragraph  tasksList__paragraph--done"
-                            : "tasksList__paragraph"} >
-                        {task.content}
-                    </span>
-                    <button onClick={() => removeTask(task.id)}
-                        className="tasksList__button tasksList__button--remove">🗑
-                    </button>
-                </li>))
-            }
-        </ul>
-    );
-};
-export default TasksList;
+import {
+    StyledTasksList,
+    StyledTasksListButton,
+    StyledTasksListLine,
+    StyledTasksListParagraph
+} from "./styled";
 
+const TasksList = ({
+    tasks,
+    hideDone,
+    removeTask,
+    toggleTaskDone }) => (
+    <StyledTasksList>
+        {tasks.map(task =>
+            <StyledTasksListLine
+                key={task.id}
+                hidden={task.done && hideDone}
+            >
+                <StyledTasksListButton onClick={() => toggleTaskDone(task.id)}
+                >
+                    {task.done ? "✓" : ""}
+                </StyledTasksListButton>
+                <StyledTasksListParagraph
+                    taskDone={task.done ? "✓" : ""}
+                >
+                    {task.content}
+                </StyledTasksListParagraph>
+                <StyledTasksListButton
+                    onClick={() => removeTask(task.id)}
+                    remove>🗑
+                </StyledTasksListButton>
+            </StyledTasksListLine>
+        )}
+    </StyledTasksList>
+);
+
+export default TasksList;

@@ -1,28 +1,30 @@
-.buttons {
-    padding: 5px;
+import styled,{css}  from "styled-components";
+
+export const StyledButtons= styled.div `
+   padding: 5px;
     display: flex;
     flex-wrap: wrap;
     justify-content: right;
     align-items: center;
     border: none;
-}
-
-.buttons__button {
+`
+export const StyledButton =styled.button `
     color: teal;
     border: none;
     background-color: transparent;
     transition: color 1s;
-}
-
-.buttons__button:hover {
+   
+&:hover {
     color: rgb(66, 30, 101);
 }
 
-.buttons__button:disabled {
+&:disabled {
     color: silver;
 }
 
-.buttons__button--hide {
-    display: none;
+${({hideDone})=>hideDone && css`
+   display: none;
     border: none;
-}
+`}
+`;
+
