@@ -1,15 +1,19 @@
 import { useSelector, useDispatch } from "react-redux";
-import { selectTasks, toggleTaskDone, removeTask } from "../tasksSlice";
-import { useEffect } from "react";
-import { List, Button, Task, Paragraph } from "./styled";
+import { Link, useLocation } from "react-router-dom";
+import {
+  selectHideDone,
+  toggleTaskDone,
+  removeTask,
+  selectTasksByQuery,
+} from "../../tasksSlice";
+import { List, Button, Task, Content } from "./styled";
 
 const TasksList = () => {
   const dispatch = useDispatch();
-  const { tasks, hideDone } = useSelector(selectTasks);
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [tasks]);
-
+  const hideDone = useSelector(selectHideDone);
+  const location = useLocation();
+  const query = new URLSearchParams(location.search).get("szukaj");
+  const tasks = useSelector((state) => selectTasksByQuery(state, query));
   return (
     <List>
       {tasks.map((task) => (
@@ -21,7 +25,9 @@ const TasksList = () => {
           >
             {task.done ? "✓" : ""}
           </Button>
-          <Paragraph taskDone={task.done ? "✓" : ""}>{task.content}</Paragraph>
+          <Content taskDone={task.done ? "✓" : ""}>
+            <Link to={`/tasks/${task.id}`}>{task.content}</Link>
+          </Content>
           <Button
             onClick={() => {
               dispatch(removeTask(task.id));
@@ -35,5 +41,4 @@ const TasksList = () => {
     </List>
   );
 };
-
 export default TasksList;

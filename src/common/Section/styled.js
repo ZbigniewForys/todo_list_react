@@ -1,7 +1,7 @@
 import styled from "styled-components";
 export const StyledSection = styled.section`
-  background-color:${({theme})=>theme.color.white};
-  border-color: ${({theme})=>theme.color.gallery};
+  background-color: ${({ theme }) => theme.color.white};
+  border-color: ${({ theme }) => theme.color.gallery};
   border-style: solid;
 `;
 export const SectionTitle = styled.h3`
@@ -13,6 +13,10 @@ export const SectionHeader = styled.header`
   grid-template-columns: auto auto;
   border: 0;
   border-bottom: 3px;
-  border-color: ${({theme})=>theme.color.gallery};
+  border-color: ${({ theme }) => theme.color.gallery};
   border-style: solid;
+`;
+export const Paragraph = styled.p`
+  padding: 18px;
+  margin: 2px;
 `;

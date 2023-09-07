@@ -1,7 +1,6 @@
 html {
   box-sizing: border-box;
 }
-
 *,
 ::before,
 ::after {
@@ -11,6 +10,4 @@ html {
 .body {
   background-color: #eeeeee;
   font-family: "Kanit", sans-serif;
-
 }
-

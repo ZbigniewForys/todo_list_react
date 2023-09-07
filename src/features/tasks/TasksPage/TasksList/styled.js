@@ -28,9 +28,9 @@ export const Task = styled.div`
     `}
 `;
 export const Button = styled.button`
-  margin: 10px;
-  height: 30px;
-  width: 30px;
+  margin:10px;
+  height: 25px;
+  width: 15px;
   border-style: none;
   background-color: ${({ theme }) => theme.color.green};
   color: white;
@@ -50,7 +50,7 @@ export const Button = styled.button`
       }
     `};
 `;
-export const Paragraph = styled.p`
+export const Content = styled.span`
   margin: 5px;
   padding: 5px;
   width: 100%;

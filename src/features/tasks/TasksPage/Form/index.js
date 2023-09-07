@@ -1,8 +1,10 @@
 import { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { StyledForm, Input, Button } from "./styled";
-import { addTask } from "../tasksSlice";
+import { StyledForm, Button } from "./styled";
+import { addTask } from "../../tasksSlice";
 import { nanoid } from "@reduxjs/toolkit";
+import Input from "../../Input";
+
 const Form = () => {
   const inputRef = useRef(null);
   const dispatch = useDispatch();
@@ -17,12 +19,10 @@ const Form = () => {
           id: nanoid(),
         })
       );
- 
     setNewTaskContent("");
-
     inputRef.current.focus();
   };
-
+  
   return (
     <StyledForm onSubmit={onFormSubmit}>
       <Input
@@ -35,5 +35,4 @@ const Form = () => {
     </StyledForm>
   );
 };
-
 export default Form;
