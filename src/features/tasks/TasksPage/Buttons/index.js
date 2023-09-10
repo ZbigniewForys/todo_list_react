@@ -28,23 +28,3 @@ const Buttons = () => {
     );
 };
 export default Buttons;
-const { tasks, hideDone } = useSelector(selectTasks);
-const dispatch = useDispatch();
-
-if (tasks.length > 0) {
-  return null;
-}
-
-return (
-  <StyledButtons>
-    <Button onClick={() => dispatch(toggleHideDone())}>
-      {hideDone ? "Pokaż " : "Ukryj "}wykonane
-    </Button>
-    <Button
-      onClick={() => dispatch(setAllDone())}
-      disabled={tasks.every(({ done }) => done)}
-    >
-      Zaznacz wszystkie
-    </Button>
-  </StyledButtons>
-);
