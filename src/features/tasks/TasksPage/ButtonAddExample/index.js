@@ -6,7 +6,9 @@ const ButtonAddDefault = () => {
   const loading = useSelector(selectLoading);
   return (
     <WrapButtons>
-      <Button onClick={() => dispatch(fetchExampleTasks())} disabled={loading}>
+      <Button onClick={() => dispatch(fetchExampleTasks())} 
+      disabled={loading}
+       >
         {loading ? "Ładowanie..." : "Pobierz przykładowe zadania"}
       </Button>
     </WrapButtons>

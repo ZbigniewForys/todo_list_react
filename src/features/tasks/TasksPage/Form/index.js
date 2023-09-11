@@ -22,7 +22,7 @@ const Form = () => {
     setNewTaskContent("");
     inputRef.current.focus();
   };
-  
+
   return (
     <StyledForm onSubmit={onFormSubmit}>
       <Input
@@ -30,7 +30,7 @@ const Form = () => {
         placeholder="Co jest do zrobienia?"
         onChange={({ target }) => setNewTaskContent(target.value)}
         ref={inputRef}
-      ></Input>
+      />
       <Button>Dodaj zadanie</Button>
     </StyledForm>
   );

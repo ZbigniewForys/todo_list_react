@@ -27,6 +27,7 @@ export const Task = styled.div`
       display: none;
     `}
 `;
+
 export const Button = styled.button`
   margin:10px;
   height: 25px;

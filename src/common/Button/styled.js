@@ -13,12 +13,12 @@ export const Button = styled.button`
   background-color: transparent;
   transition: color 1s;
 
-  &:hover {
-    filter: brightness(50%);
+  &:disabled {
+    color: black;
   }
 
-  &:disabled {
-    color: silver;
+  &:hover {
+    filter: brightness(50%);
   }
 
   ${({ hideDone }) =>

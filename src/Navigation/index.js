@@ -11,7 +11,7 @@ const Navigation = () => {
         </Item>
         <Item>
           <StyledNavLink activeClassName="active" to="/author">
-            o autorze
+            O autorze
           </StyledNavLink>
         </Item>
       </List>

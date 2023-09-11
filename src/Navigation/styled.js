@@ -24,4 +24,9 @@ export const List = styled.ul`
 
 export const Item = styled.li`
   margin: 20px;
+
+  &:hover {
+    color: ${({ theme }) => theme.color.white};
+    text-decoration: underline;
+  }
 `;

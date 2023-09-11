@@ -1,6 +1,6 @@
 # Tasks list: 
 Enabling the saving of planned tasks and successive deselection of individual tasks
-
+![print screen from todo_lists_react](https://github.com/ZbigniewForys/todo_list_react/blob/main/public/images/demo.PNG)
 # Procedure
 Enter a list of actions and then successively uncheck their execution.
 Actions that are no longer relevant can be removed from the list.
@@ -12,11 +12,8 @@ Actions that are no longer relevant can be removed from the list.
 - React
 - Redux
 
-# Demo
-![Demo](https://github.com/ZbigniewForys/Lista-zadan/blob/main/images/demo.PNG)
- [Visit Tasks list](https://zbigniewforys.github.io/Lista-zadan/) 
-
 # Task List
+![Demo][Visit Tasks List](https://zbigniewforys.github.io/todo_lists_react)
 
 # Getting Started with Create React App
 
