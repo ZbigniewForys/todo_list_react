@@ -1,8 +1,8 @@
 {
-  "name": "todo_list_react",
+  "name": "myTasksList",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://zbigniewforys.github.io/todo_list_react/",
+  "homepage": "https://zbigniewforys.github.io/myTasksList/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",

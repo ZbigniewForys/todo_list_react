@@ -15,7 +15,7 @@ const AuthorPage = () => (
           </Paragraph>
           <Paragraph>
             Na co dzień zajmuję się produkcją i sprzedażą{" "}
-            <a href="https:/www.boleslawieckaceramika.pl">
+            <a href="https://www.boleslawieckaceramika.pl">
               ceramiki bolesławieckiej
             </a>{" "}
             w sklepie internetowym.
@@ -25,4 +25,5 @@ const AuthorPage = () => (
     ></Section>
   </Container>
 );
+
 export default AuthorPage;
